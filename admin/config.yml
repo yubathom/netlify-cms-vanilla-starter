@@ -29,23 +29,28 @@ collections:
         name: "tags"
         multiple: true
         create: true
-- label: "Profile"
-  name: "profile"
-  widget: "object"
-  summary: '{{fields.name}}: {{fields.birthdate}}'
-  fields:
-    - {label: "Public", name: "public", widget: "boolean", default: true}
-    - {label: "Name", name: "name", widget: "string"}
-    - label: "Birthdate"
-      name: "birthdate"
-      widget: "date"
-      default: ""
-      format: "MM/DD/YYYY"
-    - label: "Address"
-      name: "address"
-      widget: "object"
-      collapsed: true
-      fields: 
-        - {label: "Street Address", name: "street", widget: "string"}
-        - {label: "City", name: "city", widget: "string"}
-        - {label: "Postal Code", name: "post-code", widget: "string"}
+      - label: "Profile"
+        name: "profile"
+        widget: "object"
+        summary: "{{fields.name}}: {{fields.birthdate}}"
+        fields:
+          - {
+              label: "Public",
+              name: "public",
+              widget: "boolean",
+              default: true,
+            }
+          - { label: "Name", name: "name", widget: "string" }
+          - label: "Birthdate"
+            name: "birthdate"
+            widget: "date"
+            default: ""
+            format: "MM/DD/YYYY"
+          - label: "Address"
+            name: "address"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Street Address", name: "street", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }
+              - { label: "Postal Code", name: "post-code", widget: "string" }
