@@ -1,24 +1,56 @@
 backend:
-  # Use netlify identity as backend
   name: git-gateway
   branch: main
-  ### enable below lines for github integration ###
-  # name: github
-  # repo: surjithctly/neat-starter
-media_folder: "src/static/img"
-public_folder: "/static/img"
-
-# Please run "npx netlify-cms-proxy-server" for local backend
+media_folder: src/static/img
+public_folder: /static/img
 local_backend: true
-# publish_mode: editorial_workflow
 collections:
-  - label: "Blog"
-    name: "blog"
-    folder: "src/posts"
+  - label: Blog
+    name: blog
+    folder: src/posts
     create: true
     identifier_field: name
     fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: Name
+        name: name
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Featured Image
+        name: thumbnail
+        widget: image
+      - label: Body
+        name: body
+        widget: markdown
+  - label: Profile
+    name: profile
+    widget: object
+    summary: '{{fields.name}}: {{fields.birthdate}}'
+    fields:
+      - label: Public
+        name: public
+        widget: boolean
+        default: true
+      - label: Name
+        name: name
+        widget: string
+      - label: Birthdate
+        name: birthdate
+        widget: date
+        default: ''
+        format: MM/DD/YYYY
+      - label: Address
+        name: address
+        widget: object
+        collapsed: true
+        fields:
+          - label: Street Address
+            name: street
+            widget: string
+          - label: City
+            name: city
+            widget: string
+          - label: Postal Code
+            name: post-code
+            widget: string
