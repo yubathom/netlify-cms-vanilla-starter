@@ -25,7 +25,7 @@ collections:
         widget: markdown
   - label: Profile
     name: profile
-    folder: src/posts
+    folder: src/profile
     create: true
     widget: object
     summary: '{{fields.name}}: {{fields.birthdate}}'
