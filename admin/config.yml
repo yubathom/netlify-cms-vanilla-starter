@@ -13,41 +13,14 @@ local_backend: true
 # publish_mode: editorial_workflow
 collections:
   - label: "Blog"
-  name: "blog"
-  folder: "_posts/blog"
-  create: true
-  identifier_field: name
-  fields:
-    - {label: "Name", name: "name", widget: "string"}
-    - {label: "Publish Date", name: "date", widget: "datetime"}
-    - {label: "Featured Image", name: "thumbnail", widget: "image"}
-    - {label: "Body", name: "body", widget: "markdown"}
-        label: "tags"
-        name: "tags"
-        multiple: true
-        create: true
-      - label: "Profile"
-        name: "profile"
-        widget: "object"
-        summary: "{{fields.name}}: {{fields.birthdate}}"
-        fields:
-          - {
-              label: "Public",
-              name: "public",
-              widget: "boolean",
-              default: true,
-            }
-          - { label: "Name", name: "name", widget: "string" }
-          - label: "Birthdate"
-            name: "birthdate"
-            widget: "date"
-            default: ""
-            format: "MM/DD/YYYY"
-          - label: "Address"
-            name: "address"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Street Address", name: "street", widget: "string" }
-              - { label: "City", name: "city", widget: "string" }
-              - { label: "Postal Code", name: "post-code", widget: "string" }
+    name: "blog"
+    folder: "src/posts"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
