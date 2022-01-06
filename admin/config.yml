@@ -25,10 +25,23 @@ collections:
         widget: markdown
   - label: Profile
     name: profile
-    folder: src/profiles
+    folder: src/posts
+    create: true
     widget: object
     summary: '{{fields.name}}: {{fields.birthdate}}'
     fields:
+      - label: Public
+        name: public
+        widget: boolean
+        default: true
+      - label: Name
+        name: name
+        widget: string
+      - label: Birthdate
+        name: birthdate
+        widget: date
+        default: ''
+        format: MM/DD/YYYY
       - label: Address
         name: address
         widget: object
